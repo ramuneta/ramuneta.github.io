@@ -1,158 +1,484 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="最新のCloud技術と豊富な経験ナレッジを用いてWEB体験を最適化します。">
-	<meta name="viewport" content="width=device-width">
-	<title>ABOUT US | クラウド技術で実現する真のDX - Byedge</title>
-	<link rel="stylesheet" media="all" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byedge | クラウド技術で実現する真のDX</title>
+    <style>
+        /* リセットとベーススタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* コンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ナビゲーション */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #aaa;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            height: 100vh;
+            background-image: url('https://page1.genspark.site/v1/base64_upload/725dcc69857d40dd8dbf53146d9d8f1b');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: #fff;
+            max-width: 800px;
+            padding: 0 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .hero-highlight {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 40px;
+            line-height: 1.6;
+        }
+        
+        /* セクション共通 */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #000;
+        }
+        
+        /* 提供する価値 */
+        .values {
+            background-color: #f9f9f9;
+        }
+        
+        .values-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .value-card {
+            flex: 0 0 calc(33.333% - 30px);
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        /* サービス内容 */
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .service-card {
+            flex: 0 0 calc(33.333% - 30px);
+            background-color: #000;
+            color: #fff;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .service-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .service-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 実績・事例 */
+        .achievements {
+            background-color: #f9f9f9;
+        }
+        
+        .achievements-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            flex: 0 0 calc(50% - 15px);
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .achievement-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .achievement-result {
+            font-weight: 600;
+            color: #000;
+        }
+        
+        /* ABOUT US */
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-info {
+            margin-bottom: 30px;
+        }
+        
+        .about-info p {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .about-label {
+            font-weight: 600;
+            width: 120px;
+            flex-shrink: 0;
+        }
+        
+        /* フッター */
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 992px) {
+            .value-card, .service-card, .achievement-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle, .hero-highlight {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .value-card, .service-card, .achievement-card {
+                flex: 0 0 100%;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle, .hero-highlight {
+                font-size: 1rem;
+            }
+            
+            .about-info p {
+                flex-direction: column;
+            }
+            
+            .about-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Byedge</a>
+                <div class="nav-links">
+                    <a href="#values">提供する価値</a>
+                    <a href="#services">サービス内容</a>
+                    <a href="#achievements">実績・事例</a>
+                    <a href="#about">ABOUT US</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<body id="top">
-	<div id="wrapper">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">企業にとって、本当に必要なITとは？</h1>
+            <p class="hero-subtitle">想像力を働かせ、自分事として真摯に考える。そして、戦略とアイディアで、ビジネスやサービス可能性を磨きに磨いて輝かせる。</p>
+            <p class="hero-highlight">作りたいのは、ITビジネスを変革して、実感できる唯一無二の価値と成長ストーリー</p>
+        </div>
+    </section>
 
-		<div id="sidebar">
-			<div id="sidebarWrap">
-				<h1><img src="images/logo.webp" width="129" height="50" alt="Byedge"></h1>
-				<nav id="mainnav">
-					<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
-					<div class="panel">
-						<ul>
-							<li><a href="#top">TOP</a></li>
-							<li><a href="#sec01">提供する価値</a></li>
-							<li><a href="#sec03">サービス内容</a></li>
-							<li><a href="#sec04">顧客・事例</a></li>
-							<li><a href="#sec05">ABOUT US</a></li>
-						</ul>
-						<ul id="sns">
-							<li><a href="https://www.facebook.com/tanetoyo" target="_blank"><img src="images/iconFb.png" width="20" height="20" alt="FB"></a></li>
-							<li><a href="https://twitter.com/wpo_jp" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
+    <section id="values" class="values">
+        <div class="container">
+            <h2 class="section-title">提供する価値</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">👁️</div>
+                    <h3 class="value-title">両眼視の戦略思考</h3>
+                    <p>20年以上のIT経験と経営視点を融合し、テクノロジーとビジネスの両面から企業価値を最大化する戦略を構築します。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3 class="value-title">課題解決の実行力</h3>
+                    <p>150人月規模のプロジェクトマネジメント経験から培った、複雑な課題を分解し、確実な成果へと導く思考法で、問題を解決します。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">信頼関係の構築</h3>
+                    <p>ステークホルダーとの信頼関係を最重視し、組織の力を最大限に引き出しながら、共に持続的な成果を創出します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<div id="content">
-			<p id="mainImg"><img src="images/mainimg2.webp" width="870" height="453" alt="Byedgeのメイン画像"></p>
-			<!-- MESSAGE -->
-			<section id="sec01">
-				<header>
-					<h2><span>提供する価値</span></h2>
-				</header>
-				<div class="innerS">
-					<h3>顧客体験を変えるWEB最適化のプロフェッショナル</h3>
-					<p>
-						現代のWEBサイト・ECサイトは、複雑なステークホルダーと技術要素（CDN、クラウド、基幹システム）の組み合わせで構成されています。優れた顧客体験を実現するには、従来の「フロントエンド」「バックエンド」「インフラ」という区分けを超えた、統合的な視点が不可欠です。
-					</p>
-					<p>
-						<strong>顧客がWEBサイトに求めるもの：</strong><br>
-						顧客はサイトにアクセスした瞬間、わずかな時間で「安定性」「表示速度」「使いやすさ」を判断し、サービスの信頼性を評価しています。この最初の数秒が、ビジネスの成否を分けます。
-					</p>
-					<p>
-						<strong>Byedgeの強み：</strong><br>
-						Byedgeは、顧客とサービス提供者の信頼関係（シェイクハンド）を構築するWEB体験の最適化に特化したプロフェッショナルです。主要CDN（CloudFlare/Fastly/Akamai）、パブリッククラウド（AWS/Azure/GCP）、オンプレミス環境の特性を熟知し、最適な組み合わせを実現します。
-					</p>
-				</div>
-			</section>
-			<!-- // MESSAGE -->
-			<!-- GALLERY -->
-			<section id="sec02">
-				<header>
-					<h2><span>GALLERY</span></h2>
-				</header>
-			</section>
-			<!-- // GALLERY -->
-			<!-- BRAND -->
-			<section id="sec03">
-				<header>
-					<h2><span>サービス内容</span></h2>
-				</header>
-				<div class="inner">
-					<ul class="col4">
-						<li>
-							<p class="img"><img src="images/service01.webp" width="999" height="999" alt="アーキテクチャ構成最適化"></p>
-							<p><strong>WEBサイト全体アーキテクチャー構成最適化支援</strong><br>顧客体験を最大化するための全体設計を支援します</p>
-						</li>
-						<li>
-							<p class="img"><img src="images/service02.webp" width="999" height="999" alt="マルチクラウド活用"></p>
-							<p><strong>マルチクラウド・マルチCDN活用支援</strong><br>最適なインフラ組み合わせで安定性と速度を実現します</p>
-						</li>
-						<li>
-							<p class="img"><img src="images/service03.webp" width="999" height="999" alt="表示速度改善"></p>
-							<p><strong>WEBサイト表示スピード分析・改善</strong><br>科学的分析に基づく具体的な改善策を提案・実装します</p>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<!-- // BRAND -->
-			<!-- PROJECT -->
-			<section id="sec04">
-				<header>
-					<h2><span>顧客・事例</span></h2>
-				</header>
-				<div class="inner">
-					<div class="article">
-						<img src="images/pf01.webp" width="370" height="224" loading="lazy" alt="オークローンマーケティング事例">
-						<h3>株式会社オークローンマーケティング様</h3>
-						<p><strong>WEBサイト表示高速化・内製化コンサルティング</strong></p>
-						<p>
-							<span class="highlight">成果：</span> 表示速度を12秒から約2秒台へ大幅改善<br>
-							顧客体験の向上により、コンバージョン率が向上し、事業成長に貢献しました。
-						</p>
-					</div>
-					<div class="article">
-						<img src="images/pf02.webp" width="370" height="224" loading="lazy" alt="多数クライアント事例">
-						<h3>JTB様、HIS様、外資有名シューズブランドほか</h3>
-						<p><strong>大手企業20社以上のWEB体験最適化実績</strong></p>
-						<p>
-							<span class="highlight">成果：</span> 全案件でKPI達成<br>
-							デジタルマーケティング部門、事業部門、IT部門、開発パートナー間の連携を強化し、組織の壁を超えたWEB体験最適化を実現しました。
-						</p>
-					</div>
-					<div class="article">
-						<img src="images/pf03.webp" width="370" height="224" loading="lazy" alt="花王様事例">
-						<h3>花王株式会社様</h3>
-						<p><strong>WEBサイトUI/UX効率化のCMS構築・導入およびWEBサイト高速化プロジェクト</strong></p>
-						<p>
-							<span class="highlight">成果：</span> WEBサイト高速化に伴うユーザー体験を20%以上改善<br>
-							UI/UXデザイン変更の運用フローを改善、効率的に変更できる仕組みを構築、ブランド価値向上と迅速な施策実現環境を両立させました。社内各部門・開発ベンダーとの連携をリードし、プロジェクトを成功に導きました。
-						</p>
-					</div>
-				</div>
-			</section>
-			<!-- // PROJECT -->
-			<!-- COMPANY -->
-			<section id="sec05">
-				<header>
-					<h2><span>ABOUT US</span></h2>
-				</header>
-				<div class="inner">
-					<ul class="col2">
-						<li>
-							<h3>会社概要</h3>
-							<p>
-								<strong>屋号:</strong> Byedge（バイエッジ）<br>
-								<strong>代表:</strong> 種村和豊<br>
-								<strong>所在地:</strong> 〒103-0026<br>東京都中央区日本橋兜町 17-2 兜町第6葉山ビル 4F<br>
-								<strong>メール:</strong> tanemura@byedge.jp<br>
-								<strong>事業内容:</strong> スポットCTO、セキュリティコンサルタント支援・ITおよび、WEB体験最適化コンサルティング、システムアーキテクチャ設計支援
-							</p>
-						</li>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">IT戦略コンサルティング</h3>
+                    <p>ビジネス目標を達成するための最適なIT戦略を共に構築します</p>
+                    <ul class="service-list">
+                        <li>クラウド移行戦略の策定・実行</li>
+                        <li>ITコスト最適化</li>
+                        <li>デジタルトランスフォーメーション推進</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3 class="service-title">セキュリティマネジメント</h3>
+                    <p>ビジネスの成長を支える強固で柔軟なセキュリティ体制を構築します</p>
+                    <ul class="service-list">
+                        <li>NIST CSFフレームワークを活用した全社戦略</li>
+                        <li>クラウドセキュリティ設計・構築</li>
+                        <li>インシデント対応プロセス最適化</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">プロジェクトマネジメント</h3>
+                    <p>複雑なプロジェクトを成功に導く実績とノウハウを提供します</p>
+                    <ul class="service-list">
+                        <li>大規模システム刷新・移行</li>
+                        <li>チームビルディング</li>
+                        <li>新規事業立ち上げ支援</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					</ul>
-				</div>
-			</section>
-			<!-- // COMPANY -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">実績・事例</h2>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <h3 class="achievement-title">クラウド移行プロジェクト</h3>
+                    <p class="achievement-description">約200人月規模のオンプレミスレガシーBtoC、基盤サービス刷新およびAWS移行プロジェクトを主導</p>
+                    <p class="achievement-result">成果：クリティカルな問題なくプロジェクトを完遂、ダウンタイムゼロを実現</p>
+                </div>
+                <div class="achievement-card">
+                    <h3 class="achievement-title">SaaS新規事業の立ち上げ</h3>
+                    <p class="achievement-description">コンセプト設計から開発、マーケティング戦略まで一貫して新規SaaS事業を主導</p>
+                    <p class="achievement-result">成果：立ち上げから3年で1.5億円の売上達成</p>
+                </div>
+                <div class="achievement-card">
+                    <h3 class="achievement-title">セキュリティ対策の最適化</h3>
+                    <p class="achievement-description">NIST CSFフレームワークを活用した全社セキュリティ戦略の立案・実行</p>
+                    <p class="achievement-result">成果：インシデント対応時間40%短縮、脆弱性検出数前年比60%削減</p>
+                </div>
+                <div class="achievement-card">
+                    <h3 class="achievement-title">海外スタートアップ支援</h3>
+                    <p class="achievement-description">US発スタートアップベンチャー企業の日本市場展開を技術面からサポート</p>
+                    <p class="achievement-result">成果：海外VCなどから約7千万円の資金調達に成功</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<footer id="footer">
-				Copyright(c) Byedge. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank">http://f-tpl.com</a>
-			</footer>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">ABOUT US</h2>
+            <div class="about-container">
+                <div class="about-info">
+                    <p>
+                        <span class="about-label">屋号:</span>
+                        <span>Byedge（バイエッジ）</span>
+                    </p>
+                    <p>
+                        <span class="about-label">代表:</span>
+                        <span>種村和豊</span>
+                    </p>
+                    <p>
+                        <span class="about-label">所在地:</span>
+                        <span>〒103-0026<br>東京都中央区日本橋兜町 17-2 兜町第6葉山ビル 4F</span>
+                    </p>
+                    <p>
+                        <span class="about-label">メール:</span>
+                        <span>tanemura@byedge.jp</span>
+                    </p>
+                    <p>
+                        <span class="about-label">事業内容:</span>
+                        <span>スポットCTO、セキュリティコンサルタント支援・ITおよび、WEB体験最適化コンサルティング、システムアーキテクチャ設計支援</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		</div>
-	</div>
-
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2025 Byedge All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
