@@ -169,7 +169,6 @@ section h2 span {
 	/* display: inline-block; を削除またはコメントアウト */
 	width: 100%;
 	margin: 20px auto;
-	text-align: center; /* この行を追加します */**
 }
 
 #map{
