@@ -169,7 +169,7 @@ section h2 span {
 	display: inline-block;
 	width: 100%;
   margin: 20px 0;
-	 **text-align: center; /* この行を追加します */**
+	 text-align: center; /* この行を追加します */**
 }
 
 #map{
