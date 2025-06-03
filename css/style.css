@@ -166,10 +166,10 @@ section h2 span {
 }
 
 .col2 li{
-	display: inline-block;
+	/* display: inline-block; を削除またはコメントアウト */
 	width: 100%;
-  margin: 20px 0;
-	 text-align: center; /* この行を追加します */**
+	margin: 20px 0;
+	text-align: center; /* この行を追加します */**
 }
 
 #map{
