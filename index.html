@@ -290,39 +290,6 @@
             opacity: 0.8;
         }
         
-        /* ロゴスタイル */
-        .logo-image {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) invert(1); /* ヘッダー用：黒ロゴを白に変換 */
-        }
-        
-        .about-logo-image {
-            height: auto;
-            width: 200px;
-            margin-bottom: 20px;
-            /* 白背景に黒で表示 */
-            filter: brightness(0);
-        }
-        
-        .footer-logo-image {
-            height: auto;
-            width: 150px;
-            margin-bottom: 20px;
-            filter: brightness(0) invert(1); /* フッター用：黒ロゴを白に変換 */
-        }
-        
-        .about-logo {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
         /* レスポンシブ */
         @media (max-width: 992px) {
             .value-card, .service-card, .achievement-card {
@@ -363,14 +330,6 @@
             .nav-links {
                 display: none;
             }
-            
-            .about-logo-image {
-                width: 150px;
-            }
-            
-            .footer-logo-image {
-                width: 120px;
-            }
         }
     </style>
 </head>
@@ -378,9 +337,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <img src="https://page1.genspark.site/v1/base64_upload/ccb6a126d2dd1fbfe08d71ad5e4e44bf" alt="Byedge - Cloud x Technology" class="logo-image">
-                </a>
+                <a href="#" class="logo">Byedge</a>
                 <div class="nav-links">
                     <a href="#values">提供する価値</a>
                     <a href="#services">サービス内容</a>
@@ -466,7 +423,7 @@
             <div class="achievements-container">
                 <div class="achievement-card">
                     <h3 class="achievement-title">クラウド移行プロジェクト</h3>
-                    <p class="achievement-description">約200人月規模のオンプレミスレガシーBtoC、基盤サービス刷新およびAWS移行プロジェクトを主導</p>
+                    <p class="achievement-description">150人月規模のオンプレミスレガシーシステム刷新および全社クラウド移行プロジェクトを主導</p>
                     <p class="achievement-result">成果：クリティカルな問題なくプロジェクトを完遂、ダウンタイムゼロを実現</p>
                 </div>
                 <div class="achievement-card">
@@ -529,12 +486,10 @@
     </div>
 </section>
 
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <img src="https://page1.genspark.site/v1/base64_upload/ccb6a126d2dd1fbfe08d71ad5e4e44bf" alt="Byedge - Cloud x Technology" class="footer-logo-image">
-                <p class="footer-text">© 2025 Byedge All Rights Reserved.</p>
-            </div>
+            <p class="footer-text">© 2025 Byedge All Rights Reserved.</p>
         </div>
     </footer>
 </body>
