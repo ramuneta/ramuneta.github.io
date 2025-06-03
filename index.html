@@ -290,6 +290,39 @@
             opacity: 0.8;
         }
         
+        /* ロゴスタイル */
+        .logo-image {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1); /* ヘッダー用：黒ロゴを白に変換 */
+        }
+        
+        .about-logo-image {
+            height: auto;
+            width: 200px;
+            margin-bottom: 20px;
+            /* 白背景に黒で表示 */
+            filter: brightness(0);
+        }
+        
+        .footer-logo-image {
+            height: auto;
+            width: 150px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1); /* フッター用：黒ロゴを白に変換 */
+        }
+        
+        .about-logo {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
         /* レスポンシブ */
         @media (max-width: 992px) {
             .value-card, .service-card, .achievement-card {
@@ -330,40 +363,14 @@
             .nav-links {
                 display: none;
             }
-            /* ロゴスタイル */
-            .logo-image {
-                height: 40px;
-                width: auto;
+            
+            .about-logo-image {
+                width: 150px;
             }
             
             .footer-logo-image {
-                height: 60px;
-                width: auto;
-                margin-bottom: 20px;
+                width: 120px;
             }
-            
-            .about-logo {
-                margin-bottom: 30px;
-                text-align: center;
-            }
-            
-            .footer-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            /* フッターロゴのレスポンシブ対応 */
-            @media (max-width: 768px) {
-                .logo-image {
-                    height: 30px;
-                }
-                
-                .footer-logo-image {
-                    height: 50px;
-                }
-}
-
         }
     </style>
 </head>
@@ -371,7 +378,9 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Byedge</a>
+                <a href="#" class="logo">
+                    <img src="https://page1.genspark.site/v1/base64_upload/ccb6a126d2dd1fbfe08d71ad5e4e44bf" alt="Byedge - Cloud x Technology" class="logo-image">
+                </a>
                 <div class="nav-links">
                     <a href="#values">提供する価値</a>
                     <a href="#services">サービス内容</a>
@@ -479,51 +488,53 @@
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">ABOUT US</h2>
-            <div class="about-container">
-                <div class="about-info">
-                        <div class="about-logo">
-                        　　 <img src="https://page1.genspark.site/v1/base64_upload/759c3c9a36e12f906b56e79c92b8a203" alt="Byedge Logo" class="footer-logo-image">
-                        </div>
-                    <p>
-                        <span class="about-label">屋号:</span>
-                        <span>Byedge（バイエッジ）</span>
-                    </p>
-                    <p>
-                        <span class="about-label">代表:</span>
-                        <span>種村和豊</span>
-                    </p>
-                    <p>
-                        <span class="about-label">所在地:</span>
-                        <span>〒103-0026<br>東京都中央区日本橋兜町 17-2 兜町第6葉山ビル 4F</span>
-                    </p>
-                    <p>
-                        <span class="about-label">メール:</span>
-                        <span>tanemura@byedge.jp</span>
-                    </p>
-                    <p>
-                        <span class="about-label">事業内容:</span>
-                        <span>
-                                スポットCTO、セキュリティコンサルタント支援・IT運用・導入、活用および、WEB体験最適化コンサルティング<br><br>
-                                - 執行役員/CTO経験を活かした企業のデジタル戦略策定と実行支援<br>
-                                - 副業メンバーを活用、コストを抑えて成果を出すテック、カスタマーサクセスチームの組織立ち上げと運用整備<br>                            
-                                - システム刷新・最適化PMO支援<br>
-                                - 現実に機能するセキュリティ体制の設計と実装（NIST CSFフレームワーク準拠）<br>
-                                - クラウド基盤の最適設計によるコスト削減とビジネス俊敏性の向上<br>
-                                - WEBパフォーマンス改善による顧客体験と事業成果の最大化
-                        </span>
-                    </p>
-
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">ABOUT US</h2>
+        <div class="about-container">
+            <div class="about-info">
+                <div class="about-logo">
+                    <img src="https://page1.genspark.site/v1/base64_upload/ccb6a126d2dd1fbfe08d71ad5e4e44bf" alt="Byedge - Cloud x Technology" class="about-logo-image">
                 </div>
+                <p>
+                    <span class="about-label">屋号:</span>
+                    <span>Byedge（バイエッジ）</span>
+                </p>
+                <p>
+                    <span class="about-label">代表:</span>
+                    <span>種村和豊</span>
+                </p>
+                <p>
+                    <span class="about-label">所在地:</span>
+                    <span>〒103-0026<br>東京都中央区日本橋兜町 17-2 兜町第6葉山ビル 4F</span>
+                </p>
+                <p>
+                    <span class="about-label">メール:</span>
+                    <span>tanemura@byedge.jp</span>
+                </p>
+                <p>
+                    <span class="about-label">事業内容:</span>
+                    <span>
+                        スポットCTO、セキュリティコンサルタント支援・IT運用・導入、活用および、WEB体験最適化コンサルティング<br><br>
+                        - 執行役員/CTO経験を活かした企業のデジタル戦略策定と実行支援<br>
+                        - 副業メンバーを活用、コストを抑えて成果を出すテック、カスタマーサクセスチームの組織立ち上げと運用整備<br>                            
+                        - システム刷新・最適化PMO支援<br>
+                        - 現実に機能するセキュリティ体制の設計と実装（NIST CSFフレームワーク準拠）<br>
+                        - クラウド基盤の最適設計によるコスト削減とビジネス俊敏性の向上<br>
+                        - WEBパフォーマンス改善による顧客体験と事業成果の最大化
+                    </span>
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer>
         <div class="container">
-            <p class="footer-text">© 2025 Byedge All Rights Reserved.</p>
+            <div class="footer-content">
+                <img src="https://page1.genspark.site/v1/base64_upload/ccb6a126d2dd1fbfe08d71ad5e4e44bf" alt="Byedge - Cloud x Technology" class="footer-logo-image">
+                <p class="footer-text">© 2025 Byedge All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
